@@ -1,5 +1,5 @@
 from script_ordenamiento import ordenar_por_sucursal, calcular_totales_por_sucursal
-
+from script_ordenamiento import obtener_mayor
 
 def test_ordenar_por_sucursal():
 
@@ -29,3 +29,6 @@ def test_calcular_totales_por_sucursal():
     assert resultado["A"] == 15
     assert resultado["B"] == 7
     assert resultado["B"] == 7
+
+def test_obtener_mayor():
+    assert obtener_mayor([1, 5, 3]) == 5

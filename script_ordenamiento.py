@@ -92,3 +92,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def obtener_mayor(lista):
+    return max(lista)
