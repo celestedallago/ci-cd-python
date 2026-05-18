@@ -1,4 +1,4 @@
-name: Python CI
+name: Python CI with Docker
 
 on:
   push:
@@ -19,15 +19,8 @@ jobs:
       - name: Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
+      - name: Construir imagen Docker
+        run: docker build -t ci-cd-python .
 
-      - name: Instalar dependencias
-        run: |
-          pip install -r requirements.txt
-
-      - name: Ejecutar tests
-        run: |
-          pytest
+      - name: Ejecutar tests en Docker
+        run: docker run ci-cd-python
